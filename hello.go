@@ -5,8 +5,11 @@ import "fmt"
 const hello = "Hello, "
 
 // Hello ... utils func
-func Hello(str string) string {
-	return hello + str
+func Hello(name string) string {
+	if name == "" {
+		name = "World"
+	}
+	return hello + name
 }
 
 func main() {
