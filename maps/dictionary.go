@@ -48,3 +48,8 @@ func (d Dictionary) Update(key, definition string) error {
 	}
 	return nil
 }
+
+// Delete ...
+func (d Dictionary) Delete(word string) {
+	delete(d, word)
+}

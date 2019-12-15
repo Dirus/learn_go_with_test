@@ -48,6 +48,14 @@ func TestUpdate(t *testing.T) {
 		assertError(t, err, ErrWordDoesNotExist)
 	})
 }
+
+func TestDelete(t *testing.T) {
+	word := "test"
+	dictionary := Dictionary{word: "This is a test"}
+	dictionary.Delete(word)
+	_, err := dictionary.Search(word)
+	assertError(t, err, ErrnotFound)
+}
 func assertStrings(t *testing.T, got, want string) {
 	t.Helper()
 	if got != want {
